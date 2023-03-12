@@ -66,7 +66,9 @@
             while(ss >> str) {
                 if(str[0] >= '0' && str[0] <= '9') continue;
                 int len = str.length();
-                int site = stoi(str.substr(3,len));
+                int l = 0;
+                while(str[l] != '-') l++;
+                int site = stoi(str.substr(l+1,len));
                 str = str.substr(0,2);
                 if(str[0] == 'S') str = "SL";
                 else if(str[0] == 'B') str = "3A";
